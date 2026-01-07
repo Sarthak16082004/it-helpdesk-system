@@ -7,13 +7,11 @@
 
 > A professional, production-ready IT helpdesk ticketing system for managing support requests from submission to resolution.
 
-![Project Banner](screenshots/banner.png)
 
 ## 🌟 Overview
 
 An enterprise-grade helpdesk ticket management system that streamlines IT support operations. Built with modern web technologies, this full-stack application demonstrates professional software development practices including RESTful API design, database normalization, secure authentication, and responsive UI/UX.
 
-**Live Demo:** [View Demo](your-demo-link) | **Video Walkthrough:** [Watch on YouTube](your-video-link)
 
 ---
 
@@ -49,18 +47,6 @@ An enterprise-grade helpdesk ticket management system that streamlines IT suppor
 - ✅ Responsive design (mobile-friendly)
 
 ---
-
-## 🖼️ Screenshots
-
-### User Ticket Submission
-![Ticket Form](screenshots/ticket-form.png)
-
-### Admin Dashboard
-![Admin Dashboard](screenshots/admin-dashboard.png)
-
-### Ticket Details
-![Ticket Details](screenshots/ticket-modal.png)
-
 ---
 
 ## 🛠️ Tech Stack
