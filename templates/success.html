@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Submitted - IT Helpdesk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            animation: scaleIn 0.5s ease;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .success-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--success-green);
+        }
+        
+        .success-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .success-message {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .ticket-id-box {
+            background-color: var(--gray-100);
+            border: 2px dashed var(--gray-300);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ticket-id-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ticket-id-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .info-list {
+            background-color: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+            max-width: 600px;
+        }
+        
+        .info-list h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .info-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--gray-700);
+            font-size: 0.938rem;
+        }
+        
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-list li::before {
+            content: "✓";
+            color: var(--success-green);
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="6" fill="#2563eb"/>
+                        <path d="M16 8v16M8 16h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>IT Helpdesk</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Submit Another Ticket</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="success-container">
+            <!-- Success Icon -->
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <path d="M22 4 12 14.01l-3-3"/>
+                </svg>
+            </div>
+
+            <!-- Success Message -->
+            <h1 class="success-title">Ticket Submitted Successfully!</h1>
+            <p class="success-message">
+                Your support ticket has been received and assigned to our technical team. 
+                You will receive email updates on the ticket status.
+            </p>
+
+            <!-- Ticket ID Display -->
+            <div class="ticket-id-box">
+                <div class="ticket-id-label">Your Ticket ID</div>
+                <div class="ticket-id-value">#{{ ticket_id }}</div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="/" class="btn btn-primary">Submit Another Ticket</a>
+                <button class="btn btn-secondary" onclick="window.print()">Print This Page</button>
+            </div>
+
+            <!-- What's Next Information -->
+            <div class="info-list">
+                <h3>What Happens Next?</h3>
+                <ul>
+                    <li>Your ticket has been logged in our system with ID #{{ ticket_id }}</li>
+                    <li>A confirmation email has been sent to your registered email address</li>
+                    <li>Our support team will review your ticket within 24 hours</li>
+                    <li>You'll receive email notifications for any status updates</li>
+                    <li>For urgent issues, please call our support hotline: +91-1800-123-4567</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 IT Helpdesk System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

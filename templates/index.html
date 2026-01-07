@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Helpdesk - Submit Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="6" fill="#2563eb"/>
+                        <path d="M16 8v16M8 16h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>IT Helpdesk</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link active">Submit Ticket</a>
+                <a href="/admin/login" class="nav-link">Admin Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Submit Support Ticket</h1>
+                <p class="page-subtitle">Need technical assistance? Fill out the form below and our support team will get back to you.</p>
+            </div>
+
+            <!-- Alert Messages -->
+            <div id="alertBox" class="alert" style="display: none;"></div>
+
+            <!-- Ticket Form Card -->
+            <div class="card">
+                <form id="ticketForm">
+                    <!-- Personal Information Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="userName" class="form-label">Full Name <span class="required">*</span></label>
+                                <input type="text" id="userName" name="user_name" class="form-control" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail" class="form-label">Email Address <span class="required">*</span></label>
+                                <input type="email" id="userEmail" name="user_email" class="form-control" required placeholder="john.doe@company.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="userPhone" class="form-label">Phone Number</label>
+                                <input type="tel" id="userPhone" name="user_phone" class="form-control" placeholder="+91 98765 43210">
+                            </div>
+                            <div class="form-group">
+                                <label for="department" class="form-label">Department</label>
+                                <select id="department" name="department" class="form-control">
+                                    <option value="">Select Department</option>
+                                    <option value="IT">Information Technology</option>
+                                    <option value="HR">Human Resources</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Operations">Operations</option>
+                                    <option value="Sales">Sales</option>
+                                    <option value="Marketing">Marketing</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Issue Details Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Issue Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="issueCategory" class="form-label">Issue Category <span class="required">*</span></label>
+                                <select id="issueCategory" name="issue_category" class="form-control" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Hardware">Hardware Issue</option>
+                                    <option value="Software">Software Issue</option>
+                                    <option value="Network">Network/Connectivity</option>
+                                    <option value="Email">Email Issues</option>
+                                    <option value="Access">Access/Permission Request</option>
+                                    <option value="Password">Password Reset</option>
+                                    <option value="Printer">Printer Issues</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="priority" class="form-label">Priority Level <span class="required">*</span></label>
+                                <select id="priority" name="priority" class="form-control" required>
+                                    <option value="">Select Priority</option>
+                                    <option value="Low">Low - Can wait</option>
+                                    <option value="Medium">Medium - Normal</option>
+                                    <option value="High">High - Urgent</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject <span class="required">*</span></label>
+                            <input type="text" id="subject" name="subject" class="form-control" required placeholder="Brief description of the issue">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="form-label">Detailed Description <span class="required">*</span></label>
+                            <textarea id="description" name="description" class="form-control" rows="6" required placeholder="Please provide detailed information about your issue..."></textarea>
+                            <small class="form-text">Include any error messages, steps to reproduce, or relevant details</small>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">Clear Form</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span class="btn-text">Submit Ticket</span>
+                            <span class="btn-loader" style="display: none;">
+                                <svg class="spinner" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"/>
+                                    <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" opacity="0.75"/>
+                                </svg>
+                                Submitting...
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Help Section -->
+            <div class="info-box">
+                <h4>Need Immediate Assistance?</h4>
+                <p>For urgent issues, please contact our support team directly:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Phone:</strong> +91-1800-123-4567
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong> support@helpdesk.com
+                    </div>
+                    <div class="contact-item">
+                        <strong>Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM IST
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 IT Helpdesk System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Decorative Shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/user.js') }}"></script>
+</body>
+</html>
