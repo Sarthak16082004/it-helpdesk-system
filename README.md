@@ -267,82 +267,6 @@ helpdesk-ticket-system/
     └── API_DOCS.md
 ```
 
----
-
-## 🔒 Security Features
-
-- ✅ **SQL Injection Prevention** - Parameterized queries
-- ✅ **XSS Prevention** - HTML escaping
-- ✅ **Session Security** - HTTP-only cookies, CSRF protection
-- ✅ **Input Validation** - Frontend and backend validation
-- ✅ **Authentication** - Secure session management
-- ✅ **Error Handling** - No sensitive data in error messages
-
----
-
-## 🎯 Key Learnings & Highlights
-
-### Database Design
-- Normalized to 3NF for data integrity
-- Strategic indexing on frequently queried columns
-- Foreign keys with CASCADE operations
-- Stored procedures for complex operations
-
-### Backend Development
-- RESTful API design principles
-- Error handling and logging
-- Database connection management
-- Session-based authentication
-
-### Frontend Development
-- Responsive design without frameworks
-- AJAX for asynchronous operations
-- Real-time form validation
-- Dynamic DOM manipulation
-
-### Software Engineering
-- MVC architecture pattern
-- Separation of concerns
-- Code documentation
-- Version control best practices
-
----
-
-## 🧪 Testing
-
-### Manual Testing Checklist
-
-**User Flow:**
-- [ ] Submit ticket with valid data
-- [ ] Form validation works
-- [ ] Success page displays ticket ID
-- [ ] Email validation catches errors
-
-**Admin Flow:**
-- [ ] Login with credentials
-- [ ] Dashboard loads statistics
-- [ ] Tickets display correctly
-- [ ] Filters work properly
-- [ ] Search functions correctly
-- [ ] Status updates work
-- [ ] Logout works
-
----
-
-## 🚀 Future Enhancements
-
-- [ ] Email notifications (SMTP integration)
-- [ ] File attachments for tickets
-- [ ] Advanced reporting and analytics
-- [ ] SLA tracking and alerts
-- [ ] Multi-agent assignment
-- [ ] Real-time updates (WebSockets)
-- [ ] Export tickets to PDF/CSV
-- [ ] Dark mode support
-- [ ] Mobile app (React Native)
-
----
-
 ## 📈 Performance Optimizations
 
 - Database indexing on frequently queried columns
@@ -371,19 +295,11 @@ Please ensure:
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 👤 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-- Portfolio: [yourwebsite.com](https://yourwebsite.com)
-- Email: your.email@example.com
+**SARTHAK PATHAK**
+- LinkedIn: Sarthak Pathak((https://www.linkedin.com/in/sarthak-pathak-639717302/))
+- Email: sarthakpathak1608@gmail.com
 
 ---
 
@@ -399,7 +315,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you have questions or need help with setup:
-- Open an [Issue](https://github.com/yourusername/helpdesk-ticket-system/issues)
+- Open an [Issue](https://github.com/Sarthak16082004/helpdesk-ticket-system/issues)
 - Check the [Setup Guide](documentation/SETUP_GUIDE.md)
 - Review [API Documentation](documentation/API_DOCS.md)
 
@@ -413,54 +329,6 @@ Give a ⭐️ if this project helped you learn full-stack development!
 
 **Built with ❤️ for learning and professional development**
 
----
-
-## 📊 Project Stats
-
-![GitHub stars](https://img.shields.io/github/stars/yourusername/helpdesk-ticket-system?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/helpdesk-ticket-system?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/helpdesk-ticket-system)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/helpdesk-ticket-system)
-```
-
----
-
-## 🏷️ GitHub Topics/Tags to Add
-
-Add these topics to your GitHub repository for better discoverability:
-```
-python
-flask
-mysql
-javascript
-html5
-css3
-rest-api
-full-stack
-web-development
-helpdesk
-ticket-management
-crud-application
-database-design
-responsive-design
-authentication
-session-management
-portfolio-project
-beginner-friendly
-```
-
----
-
-## 📱 Social Media Description (LinkedIn/Twitter)
-```
-🎫 Just built an IT Helpdesk Ticket Management System!
-
-✨ Features:
-- Flask REST API backend
-- MySQL database with normalization
-- Admin dashboard with real-time stats
-- Secure authentication
-- Responsive UI
 
 Perfect project for learning full-stack development!
 
